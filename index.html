@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Funciones</title>
+</head>
+<body>
+
+<script>
+    // Define las funciones aquí (puedes copiar las funciones extraerDominio de JavaScript proporcionadas anteriormente)
+    function extraerDominio(correo) {
+    // Utiliza el método split para dividir la dirección de correo en dos partes: usuario y dominio
+    const partes = correo.split('@');
+    
+    // Verifica si hay al menos dos partes (usuario y dominio)
+    if (partes.length >= 2) {
+        // Devuelve la segunda parte, que es el dominio
+        return partes[1];
+    } else {
+        // Si no hay suficientes partes, devuelve null
+        return null;
+    }
+}
+
+// Ejemplo de uso:
+const direccionCorreo = prompt("Dime una dirección de correo:");
+// const direccionCorreo = "usuario@dominio.com";
+const dominioExtraido = extraerDominio(direccionCorreo);
+
+if (dominioExtraido) {
+    console.log("El dominio extraído es:", dominioExtraido);
+} else {
+    console.log("La dirección de correo no es válida.");
+}
+
+    // Función para imprimir los resultados usando document.write
+    function imprimirResultado(nombreFuncion, parametros, resultado) {
+        document.write(`<p style="font-size=12px"><strong>Ejercicio 1</strong>`);
+        document.write(`<p><strong>Función que se llama:</strong> ${nombreFuncion}</p>`);
+        document.write(`<p><strong>Parámetro que se pasa:</strong> ${parametros}</p>`);
+        document.write(`<p><strong>Resultado:</strong> ${resultado}</p>`);
+        document.write("<hr>");
+    }
+
+    /* Ejemplos de llamadas a las funciones
+    const correo1 = "usuario1@dominio1.com";
+    const correo2 = "usuario2@dominio2.com";
+    const correo3 = "usuario3@dominio3.com"; */
+
+    // Llamadas a las funciones
+    const resultado1 = extraerDominio(direccionCorreo);
+    imprimirResultado("extraerDominio", `"${direccionCorreo}"`, resultado1);
+
+    /* const resultado2 = extraerDominio(correo2);
+    imprimirResultado("extraerDominio", `"${correo2}"`, resultado2);
+
+    const resultado3 = extraerDominio(correo3);
+    imprimirResultado("extraerDominio", `"${correo3}"`, resultado3);
+    */
+</script>
+
+</body>
+</html>
